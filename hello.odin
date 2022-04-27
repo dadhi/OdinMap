@@ -32,12 +32,12 @@ main :: proc() {
     m.value = "b"
     fmt.printf("leaf: %v\n", m)
 
-    l1 := new_omap(3, "c")
+    l1 := new_omap(42, "42")
     t1 := new_omap(2, "b", &m, &l1)
     fmt.printf("tree: %#v\n", t1)
 
     t2 := new_omap(2, "b", &m, &l1)
-    t3 := new_omap(2, "b", &l1, &t2)
+    t3 := new_omap(3, "c", &l1, &t2)
     fmt.printf("tree: %#v\n", t3)
 
     fmt.printf("recover tree right: %#v\n", (cast(^OMapBranch(string))t3.right)^)
