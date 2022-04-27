@@ -40,7 +40,7 @@ main :: proc() {
     t3 := new_omap(2, "b", &l1, &t2)
     fmt.printf("tree: %#v\n", t3)
 
-    fmt.printf("tree right: %#v\n", (cast(^OMapBranch(string))t3.right)^)
+    fmt.printf("recover tree right: %#v\n", (cast(^OMapBranch(string))t3.right)^)
 
     fmt.println("Hello Sailor!")
 }
